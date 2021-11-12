@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 247 - Online Doctor Consultation & Book Lab Tests at apollo247.com</title>
+    <link rel="shortcut icon" type="img/png"  href="https://newassets.apollo247.com/images/ic_logo.png">
+   
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="otp.css">
+    <link rel="stylesheet" href="doctors.css">
+    
+</head>
+<body>
+    <div id="needHelp">
+        <img src="https://newassets.apollo247.com/images/ic-mascot.png" alt="">
+    </div>
+
+     <div id="container">
+         <div id="header">
+             <div id="apolloLogo"><img style="cursor: pointer;" src="https://newassets.apollo247.com/images/ic_logo.png"/></div>
+             <div id="doctorHover">
+                 <h3>DOCTORS</h3>
+                 <p>Consult <br> Online</p>
+            </div>
+             <div id="pharmacy">
+                 <h3>PHARMACY</h3>
+                 <p>Medicines &<br>other products</p>
+            </div>
+             <div>
+                 <h3>LAB TESTS</h3>
+                 <p>Health <br> check-ups</p>
+            </div>
+             <div>
+                 <h3>COVID-19</h3>
+                 <p>Latest <br> updates</p>
+            </div>
+             <div id="cart" onclick="goToCartPage()"><img style="cursor: pointer;" src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png"/></div>
+             <div onclick="loginPage()" id="login"><img style="cursor: pointer;" src="https://i.pinimg.com/originals/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg"/></div>
+         </div>
+        <div id="logindiv">
+            <div id="loginPage">
+                <div onclick="closeNav()" id="cross">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0;">Hi</h1>
+                <p style="font-size: 30px; color:blue;">Please enter your mobile number to login</p>
+                <label for="mobileNo">+91</label>
+                <input type="number" name="" id="mobileNo" placeholder="enter your mobile number" required>
+                <button onclick="goToOTP()">&#8594;</button>
+                <p style="font-size: 20px;">OTP will be sent to this number by SMS and whatsapp. By signing up, I agree to the <span style="color: #FED984;">Privacy Policy, Terms and Conditions</span> of Apollo247</p>
+               </div>
+        </div>
+
+        <div id="otpDiv">
+            <div id="otpPage">
+                <div onclick="cancelOtpPage()" id="crossOTP">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0 50px 0; padding-top: 50px;">Great</h1>
+                <p style="font-size: 30px; color:blue;">Now type the OTP sent to you for the authentication</p>
+                
+                <input type="number" name="" id="otp" placeholder="Enter your OTP" required>
+                <button onclick="putOTP()">&#8594;</button>
+                <p style="font-size: 20px;">resend OTP</p>
+               </div>
+        </div>
+
+        <div style="width: 96%; margin:auto; color:chocolate;">
+            <h3>Home <span style="color: rgb(9, 95, 95);">&#x025B8; Specialities</span></h3>
+        </div>
+        <hr style="width: 96%; margin:50px auto; border:1px solid green;">
+
+        <div id="doctorContainer">
+            <div id="doctors">
+               <h1 class="h1">Online Doctor Consultation</h1>
+               <span>
+                <img style="width: 30px;" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/magnifying-glass-tilted-left_1f50d.png" alt=""> 
+               </span>
+               
+               <input type="text" placeholder="Search Doctors or Specialities" id="searchDr">
+               <h1 class="h1">Start your care now by choosing from over 4000 doctors and 58 specialities</h1>
+               <h2 class="h1">TOP SPECIALITIES</h2>
+               <hr style="border: 1px solid rgb(133, 165, 133); width: 95%; margin: auto;">
+            
+               <div id="topSpl">
+                   <div id="derma">
+                     <h2>Dermatology</h2>
+                     <img src="https://prodaphstorage.blob.core.windows.net/specialties/ee249e8a-950a-489c-8a33-8846889831f5.jpg" alt="">
+                     <p>Specialist for hair and skin treatment</p>
+                     <h3>Rashes, Acne, Pimples, Hairfall, Dandruff</h3>
+                   </div>
+                   <div id="generalPhy">
+                    <h2>General Physician</h2>
+                    <img src="https://newassets.apollo247.com/specialties/ic_general_medicine.png" alt="">
+                    <p>Managing acute medical conditions</p>
+                    <h3>Typhoid, Abdominal Pain, Migraine, Infection</h3>
+                  </div>
+                  <div id="paediatrics">
+                    <h2>Paediatrics</h2>
+                    <img src="https://newassets.apollo247.com/specialties/ic_paediatrics.png" alt="">
+                    <p>Specialists to care and treat children</p>
+                    <h3>Constipation, Puberty, Nutrition, Autism</h3>
+                  </div>
+                  <div id="psycho">
+                    <h2>Psychiatry</h2>
+                    <img src="https://newassets.apollo247.com/specialties/ic_psychiatrist.png" alt="">
+                    <p>Specialists to help treat mental health </p>
+                    <h3> Anxiety, Depression, Stress, OCD, Bipolar</h3>
+                  </div>
+                   
+               </div>
+            
+            <h1 class="h1">OTHER SPECIALITIES</h1>
+
+            <hr>
+            <div id="otherSpl">
+                <div>
+                        <div>
+                            <img src="https://prodaphstorage.blob.core.windows.net/specialties/bdf0cf0d-754e-4254-aaf7-fdc7aedd7c35.jpg" alt="">
+                        </div>
+                    
+                        <div>
+                            <h4>Allergist and Clinical Immunologist</h4>
+                            <p>Manage allergies and treat immunity </p>
+                           
+                        </div>
+                        <div>
+                            <p style="font-size: 50px;">&#x0203A;</p>
+                        </div>
+                    
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/7236eab5-ea3c-4691-8362-c1fec2198596.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Apollo Family Health Plan</h4>
+                    <p>Book Package with your favourite Doctors</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_bariatrics.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Bariatrics</h4>
+                    <p>For obesity related disorders</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/191336fb-173d-456b-b55b-c00669e35feb.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Cardiology</h4>
+                    <p>For heart and blood pressure related problems</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/e5a03790-7cef-4f9c-909c-e45b658a5a6d.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Cold, Cough and Fever</h4>
+                    <p>For common health concerns</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/62b70a73-837b-4b65-9b35-9b5ce04da79a.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Colorectal Surgery</h4>
+                    <p>For disorders of rectum, anus and colon</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/34ae6abd-5a9d-40d1-98be-454ac94925c7.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Counselling</h4>
+                    <p>Emotional or mental health difficulties</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/2ffe13c1-efa3-4361-9dde-afafb53d4553.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Covid Consultation</h4>
+                    <p>Treatment of covid</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/83163700-97e1-47cd-a715-5941fd708a03.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Covid Recover Clinic</h4>
+                    <p>Treatment of post covid Mid/Long term illness</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_Critical_Care.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Critical Care</h4>
+                    <p>For life-threatening Condition</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/dc6baffd-4104-4a38-a8b2-0f262d7270aa.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>De-Addiction Management</h4>
+                    <p>Specialist to quit smoking and alchohol</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_Dentist.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Dentist</h4>
+                    <p>Specialist for dental health and treatment</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_obstetrics_and_gynaecology.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Obstetrics and Gynaecologists</h4>
+                    <p>For women health issues and Surgery</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_OMSurgery.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Oral Maxillofacial Surgery</h4>
+                    <p>For reconstructive Surgery of face, jaws and cavity</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_orthopaedics.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Orthopaedics</h4>
+                    <p>Managing issue of joint , boons and knees</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_Pain_Management.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Pain Management</h4>
+                    <p>For Management of All type of Pain</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_podiatry.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Podiatry</h4>
+                    <p>For treating foot, ankle and leg disorders</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/a7140a26-4955-4c50-bb6a-3299b8de886c.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Psychologist</h4>
+                    <p>Therapist for mental health issues</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_pulmonology.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Pulmonary/respiratory disease</h4>
+                    <p>Managing lung and respiratory issues</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://newassets.apollo247.com/specialties/ic_urology.png" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Urology</h4>
+                    <p>For disorders of urinary tract and male reprodutive disorder</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/86b4284f-3358-44e4-a85c-2ce3de5b8c4f.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Transplant Surgery</h4>
+                    <p>Managing organ replacement/transplant</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/specialties/33100aa2-2b45-4671-b7d7-68c2e22cd049.jpg" alt="">
+                    </div>
+                
+                    <div>
+                        <h4>Sexual health</h4>
+                    <p>For treatment of sexual disorder</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 50px;">&#x0203A;</p>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+
+            <div id="whyApollo">
+                <h1 class="h1">Why Apollo247</h1>
+                <ul>
+                    <li>Round-the-clock doctor availability</li>
+                    <li>Broad range of Specialities</li>
+                    <li>Detailed digital prescriptions</li>
+                    <li>Order medicines & tests online</li>
+                    <li>Digitised health records</li>
+                </ul>
+                <h1 class="h1">How Doctor Consultation Works</h1>
+
+                <div id="howDoctorWork">
+                    <div><h2>Text/Audio/Video</h2></div>
+                    <div><h2>Meet in Person</h2></div>
+                </div>
+                <div id="chooseDr">
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/consult-doc.svg" alt="">
+                    <span>Choose the doctor</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/slot.svg" alt="">
+                    <span>Book a slot</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/ic-payment.svg" alt="">
+                    <span>Make payment</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/ic-mobile.svg" alt="">
+                    <span>Mobile Icon
+                        Be present in the consult room on apollo247.com at the time of consult</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/prescription.svg" alt="">
+                    <span>Receive prescriptions instantly</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/ic-followchat.svg" alt="">
+                    <span>Follow Up via text - Valid upto 7 days</span>
+                   </div>
+                </div>
+
+                <div style="margin: 30px auto;">
+                    <p>To enjoy services provided by Apollo 247 on Mobile, download our App</p>
+
+                </div>
+                <div>
+                    <img style="width:150px" src="https://newassets.apollo247.com/images/apollo247.png" alt="">
+                    <span style="color: coral;">DOWNLOAD THE APP</span>
+                </div>
+            </div>
+        </div>
+
+         <div id="bottomPart">
+             <div style="margin: auto; width:200px">
+                 <img style="width: 120px;" src="https://newassets.apollo247.com/images/ic_logo.png" alt="">
+             </div>
+             <h3>About Apollo 247</h3>
+             <ul class="bottomContent">
+                 <li>About Us</li>
+                 <li>Contact Us</li>
+                 <li>FAQs</li>
+                 <li>Health Queries</li>
+                 <li>Terms and Conditions</li>
+                 <li>Returns Policy</li>
+                 <li>Refund Policy</li>
+                 <li>Privacy Policy</li>
+                 <li>Apollo 247 Android App</li>
+                 <li>Apollo 247 iOS App</li>
+                 <li>Apollo 247 Sitemap</li>
+                 <li>Online Doctor App</li>
+                 <li>Online Medicine App</li>
+                 <li>Apollo Pharmacy</li>
+             </ul>
+
+             <h3>Services</h3>
+             <ul class="bottomContent">
+                 <li>Online Doctor Consultation</li>
+                 <li>Apollo Circle Membership</li>
+                 <li>Online Medicines</li>
+                 <li>Project Kavach</li>
+                 <li>Cough Scanner</li>
+                 <li>Covid Vaccine Tracker</li>
+                 <li>Covid Vaccine Update</li>
+                 <li>Apollo Pro Health Program</li>
+                 <li>Doctors by Specialty</li>
+                 <li>Doctors by City</li>
+                 <li>All Doctors List</li>
+                 
+             </ul>
+
+             <h3>Top Specialists</h3>
+             <ul class="bottomContent">
+                 <li>Covid Consultation</li>
+                 <li>Consult Physicians</li>
+                 <li>Consult Dermatologists</li>
+                 <li>Consult Paediatricians</li>
+                 <li>Consult Gynaecologists</li>
+                 <li>Consult Gastroenterologists</li>
+                 <li>Consult Cardiologists</li>
+                 <li>Consult Dietitians</li>
+                 <li>Consult ENT Specialists</li>
+                 <li>Consult Geriatricians</li>
+                 <li>Consult Diabetologists</li>
+               </ul>  
+               <h3>Book Lab Tests at Home</h3>
+               <ul class="bottomContent">
+                   <li>RT PCR Test At Home</li>
+                   <li>Book Lab Tests at Home</li>
+                   <li>Renal Profile (KFT, RFT Test)</li>
+                   <li>Hemogram Test</li>
+                   <li>Lipid Profile Test</li>
+                   <li>Thyroid Profile Test (T3 T4 Tsh Test)</li>
+                   <li>D Dimer Test</li>
+                   <li>Urine Culture Test</li>
+                   <li>Complete Blood Count (CBC Test)</li>
+                   <li>Widal Test</li>
+                   <li>Liver Function Test (LFT Test)</li>
+                 </ul>  
+                 <h3>Product Categories</h3>
+                 <ul class="bottomContent">
+                     <li>View All Brands</li>
+                     <li>Health Care</li>
+                     <li>Personal Care</li>
+                     <li>Baby Care</li>
+                     <li>Nutrition</li>
+                     <li>Healthcare Devices</li>
+                     <li>Beauty Skin Care</li>
+                     <li>Immunity Boosters</li>
+                     <li>Coronavirus Prevention</li>
+                     <li>Diabetes Care</li>
+                     <li>Patanjali Coronil Kit</li>
+                     <li>Mamaearth Products</li>
+                   </ul>  
+         </div>
+     </div>
+
+
+     <script src="index.js"></script>
+     <script src="doctors.js"></script>
+    
+
+</body>
+</html>

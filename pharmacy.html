@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 247 - Online Doctor Consultation & Book Lab Tests at apollo247.com</title>
+    <link rel="shortcut icon" type="img/png"  href="https://newassets.apollo247.com/images/ic_logo.png">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="otp.css">
+    <style>
+
+      #pharmacyDiv{
+          background-color: whitesmoke;
+          border-bottom:5px solid green;
+      }
+      #hoverHead{
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          background-color: whitesmoke;
+          margin: 0 0 20px ;
+      }
+      #hoverHead > li{
+          background-color: blue;
+          color: gray;
+          list-style: none;
+          padding: 5px;
+          font-size: 20px;
+          background-color: white;
+      }
+
+      #searchMeds{
+          width: 80%;
+          margin: auto;
+      }
+      #searchMeds input{
+          width: 80%;
+          margin: auto;
+      }
+      .sellerHead{
+          width: 90%;
+          margin:50px auto 10px;
+          display: flex;
+          justify-content: space-between;
+      }
+      .sellerHead > h2:nth-child(1){
+         color: rgb(5, 5, 70);
+         font-size: 30px;
+      }
+      .sellerHead > h2:nth-child(2){
+         color: rgb(252,153,22);
+      }
+      .hotsellers{
+          display: flex;
+          width: 90%;
+          gap: 10px;
+          justify-content: space-between;
+          color: gray;
+          margin:50px auto;
+          background-color: whitesmoke;
+      }
+      .hotsellers > div{
+          width: 15%;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          
+          border-radius: 15px;
+          line-height: 30px;
+          background-color: white;
+          text-align: center;
+          cursor: pointer;
+      }
+      .hotsellers > div img{
+          width: 100%;
+          height: 120px;
+      }
+      .hotsellers > div input{
+          width: 100% ;
+          border: none;
+          font-size: 25px; 
+          border-radius: 10px;
+          color: rgb(252,153,22);
+          font-weight: bolder;
+          padding: 10px;
+          background-color: white;
+         
+      }
+      .hotsellers > div input:hover{
+         background-color: rgb(252,153,22);
+         color: white;
+         cursor: pointer;
+      }
+      hr{
+          width: 90%;
+          margin: 20px auto;
+      }
+      #explore{
+          display: flex;
+          width: 90%;
+          justify-content: space-between;
+          margin:50px auto;
+          
+      }
+      #explore > div{
+          width: 32%;
+          cursor: pointer;
+      }
+      #explore > div img{
+          width: 100%;
+         
+      }
+      #goToCart{
+        position: fixed;
+        background-color: rgb(10, 10, 114);
+        border-radius: 15px;
+        left: 10px;
+        top: 40%;
+      }
+      #goToCart > h1{
+          color: white;
+          padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="goToCart">
+        <h1>Go To Cart</h1>
+    </div>
+    <div id="needHelp">
+        <img src="https://newassets.apollo247.com/images/ic-mascot.png" alt="">
+    </div>
+
+     <div id="container">
+         <div id="header">
+             <div id="apolloLogo">
+                 <img style="cursor: pointer;" src="https://newassets.apollo247.com/images/pharmacy_logo.svg"/>
+              </div>
+             <div id="doctors">
+                 <h3>DOCTORS</h3>
+                 <p>Consult <br> Online</p>
+            </div>
+             <div id="pharmacyDiv">
+                 <h3>PHARMACY</h3>
+                 <p>Medicines &<br>other products</p>
+            </div>
+             <div>
+                 <h3>LAB TESTS</h3>
+                 <p>Health <br> check-ups</p>
+            </div>
+             <div>
+                 <h3>COVID-19</h3>
+                 <p>Latest <br> updates</p>
+            </div>
+             <div id="cart" onclick="goToCartPage()">
+                <img style="cursor: pointer;" src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png"/>
+            </div>
+             <div onclick="loginPage()" id="login">
+                <img style="cursor: pointer;" src="https://i.pinimg.com/originals/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg"/>
+            </div>
+         </div>
+        <div id="logindiv">
+            <div id="loginPage">
+                <div onclick="closeNav()" id="cross">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0;">Hi</h1>
+                <p style="font-size: 30px; color:blue;">Please enter your mobile number to login</p>
+                <label for="mobileNo">+91</label>
+                <input type="number" name="" id="mobileNo" placeholder="enter your mobile number" required>
+                <button onclick="goToOTP()">&#8594;</button>
+                <p style="font-size: 20px;">OTP will be sent to this number by SMS and whatsapp. By signing up, I agree to the <span style="color: #FED984;">Privacy Policy, Terms and Conditions</span> of Apollo247</p>
+               </div>
+        </div>
+
+        <div id="otpDiv">
+            <div id="otpPage">
+                <div onclick="cancelOtpPage()" id="crossOTP">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0 50px 0; padding-top: 50px;">Great</h1>
+                <p style="font-size: 30px; color:blue;">Now type the OTP sent to you for the authentication</p>
+                
+                <input type="number" name="" id="otp" placeholder="Enter your OTP" required>
+                <button onclick="putOTP()">&#8594;</button>
+                <p style="font-size: 20px;">resend OTP</p>
+               </div>
+        </div>
+
+         <ul id="hoverHead">
+             <li>Ayurveda</li>
+             <li>Health Devices</li>
+             <li>Baby Care</li>
+             <li>Women Care</li>
+             <li>Personal Care</li>
+             <li>Home Essentials</li>
+             <li>Health and Nutrition</li>
+             <li>OTC</li>
+             <li>Apollo Life</li>
+             <li>Holland & Barrett</li>
+         </ul>
+         <hr>
+        <div id="searchMeds">
+            <input type="text" placeholder="search meds, brands and more" >
+            <button>&#8594;</button>
+        </div>
+         <div class="slider">
+            <div class="slides">
+                <!--radio button start-->
+                <input type="radio" name="radio_btn" id="radio1">
+                <input type="radio" name="radio_btn" id="radio2">
+                <input type="radio" name="radio_btn" id="radio3">
+                <input type="radio" name="radio_btn" id="radio4">
+                <!--radio button end-->
+                <!--image slides start-->
+                <div class="slide first">
+                    <img src="https://newassets.apollo247.com/images/banners/mweb_First3.jpg" alt="" >
+                </div>
+                <div class="slide">
+                    <img src="https://newassets.apollo247.com/images/banners/mweb_HHCancer_05_11_2021.jpg" alt="">
+                </div>
+                <div class="slide">
+                   <img src="https://newassets.apollo247.com/images/banners/mweb_Labtests_15Oct21.jpg" alt="">
+               </div>
+               <div class="slide">
+                   <img src="https://newassets.apollo247.com/images/banners/mweb_ApolloHomeCare.jpg" alt="">
+               </div>
+                <!--image slides end-->
+                <!--automatic navigation start-->
+                  <div class="navigation-auto">
+                      <div class="navigation-btn1"></div>
+                      <div class="navigation-btn2"></div>
+                      <div class="navigation-btn3"></div>
+                      <div class="navigation-btn4"></div>
+                  </div>
+                <!--automatic navigation end-->
+                <!--manual navigation start-->
+                
+            </div>
+    
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!--manual navigation end-->
+           
+        </div>
+         <div id="vaccineQuery-container">
+             <h2>SHOP BY HEALTH CONDITIONS</h2>
+            <div id="vaccineQuery">
+            
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/pub/media/healtharea/247images/i/c/ic_diabetes.png" alt="">
+                    <span>Diababetes Care</span>
+                </div>
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/pub/media/healtharea/247images/i/c/ic_heart.png" alt="">
+                    <span>Cardiac</span>
+                </div>
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/pub/media/healtharea/247images/i/c/ic_lungs.png" alt="">
+                    <span>Respiratory</span>
+                </div>
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/images/vaccine.png" alt="">
+                    <span>Cowin Registration</span>
+                </div>
+                
+            </div>
+         </div>
+         <div style="width: 90%; height: 300px; margin: 50px auto; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 15px;">
+             <img style="width: 100%; height: 100%;" src="https://newassets.apollo247.com/images/prohealth/prohealthSliderThree.jpg" alt="">
+         </div>
+
+         <!--Hot sellers start-->
+         <div class=sellerHead>
+            <h2>Hot Sellers</h2>
+            <h2>View All</h2>
+         </div>
+         <hr style="width: 90%; margin:auto;">
+
+         <div class="hotsellers">
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/p/o/pon0138.jpg" alt="">
+                </div>
+                <div>
+                    <p>Ponds Moisturising <br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del> (310)</del></h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/d/h/dho0093.jpg" alt="">
+                </div>
+                <div>
+                    <p>Dhootapeswara <br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(210)</del></h2>
+                    <h3>Rs.180</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/f/a/fas0112_2.jpg" alt="">
+                </div>
+                <div>
+                    <p>Fast and Natural <br> Vitamin C, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(350)</del></h2>
+                    <h3>Rs.290</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;50 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/b/i/bio1158.jpg" alt="">
+                </div>
+                <div>
+                    <p>Bio Oil <br> 60 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(450)</del></h2>
+                    <h3>Rs.360</h3>
+                </div>
+                <div>
+                  <span>&#x20B9;25 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/h/e/hea0497_1_.jpg" alt="">
+                </div>
+                <div>
+                    <p>Healthvit Omega-3 fish oil <br> Natural, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/h/o/hor0080.jpg" alt="">
+                </div>
+                <div>
+                    <p>Horlicks Woment's plus<br> chocolate flavoured</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(210)</del></h2>
+                    <h3>Rs.150</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+        </div>
+         <!--Hot sellers end-->
+         
+          <!--Winter sellers start-->
+          <div class=sellerHead>
+            <h2>WINTER CARE</h2>
+            <h2>View All</h2>
+         </div>
+         <hr style="width: 90%; margin:auto;">
+
+         <div class="hotsellers">
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/b/o/bor0039_1_2.jpg" alt="">
+                </div>
+                <div>
+                    <p>Boro Plus<br> body lotion, 400 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.250</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img style="width: 120px;" src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/j/o/joh0030.jpg" alt="">
+                </div>
+                <div>
+                    <p>Jonshon's Baby Oil<br> oil, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(400)</del></h2>
+                    <h3>Rs.290</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/1/2/12839_s1-8901030764639.jpg" alt="">
+                </div>
+                <div>
+                    <p>Baby Dove Rich<br> Cold Creame, 100 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.120</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/1/2/12568_h-8901030654565.jpg" alt="">
+                </div>
+                <div>
+                    <p>Fair & Lovely<br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.290</h3>
+                </div>
+                <div>
+                   <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/n/i/niv0264.jpg" alt="">
+                </div>
+                <div>
+                    <p>Nivea shea  <br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP (400)</h2>
+                    <h3>Rs.361</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;13 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/h/i/him0179_2.jpg" alt="">
+                </div>
+                <div>
+                    <p>Himalaya Baby lotion<br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(150)</del></h2>
+                    <h3>Rs.130</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+        </div>
+         <!--Winter sellers end-->
+
+         <div id="vaccineQuery-container">
+            <h2>SHOP BY CATEGORY</h2>
+           <div id="vaccineQuery">
+           
+               <div>
+                   <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/pub/media/healtharea/247images/i/c/ic_diabetes.png" alt="">
+                   <span>Diababetes Care</span>
+               </div>
+               <div>
+                   <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/pub/media/healtharea/247images/i/c/ic_heart.png" alt="">
+                   <span>Cardiac</span>
+               </div>
+               <div>
+                   <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/pub/media/healtharea/247images/i/c/ic_lungs.png" alt="">
+                   <span>Respiratory</span>
+               </div>
+               <div>
+                   <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/images/vaccine.png" alt="">
+                   <span>Cowin Registration</span>
+               </div>
+               
+           </div>
+        </div>
+
+        <div class=sellerHead>
+            <h2>EXPLORE - POPULAR PRODUCTS</h2>
+        </div>
+        <hr>
+
+        <div id="explore">
+            <div>
+                <img src="https://newassets.apollo247.com/pub/media/wysiwyg/home/247_mens_range_offers.jpg"/>
+            </div>
+            <div>
+                <img src="https://newassets.apollo247.com/pub/media/wysiwyg/home/247_feminine_care_offers.jpg"/>
+            </div>
+            <div>
+                <img src="https://newassets.apollo247.com/pub/media/wysiwyg/home/247_dove_offers.jpg"/>
+            </div>
+        </div>
+
+          <!--Half Price store start-->
+          <div class=sellerHead>
+            <h2>HALF PRICE STORE</h2>
+            <h2>View All</h2>
+         </div>
+         <hr style="width: 90%; margin:auto;">
+
+         <div class="hotsellers">
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/l/i/lit0170_3.jpg" alt="">
+                </div>
+                <div>
+                    <p>Little soft<br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del> <del>(310)</del></del></h2>
+                    <h3>Rs.290</h3>
+                </div>
+                <div>
+                   <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/k/a/kam0050_2.jpg" alt="">
+                </div>
+                <div>
+                    <p>Kamasutra urge men <br>oil , 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP (310)</h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/s/e/set0154.jpg" alt="">
+                </div>
+                <div>
+                    <p>Set wet <br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(30)</del></h2>
+                    <h3>Rs.10</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/i/m/img_20210109_173928__front__hand_sanitizer_250ml_1__1.jpg" alt="">
+                </div>
+                <div>
+                    <p>Apollo life  <br> sanitize, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(122)</del></h2>
+                    <h3>Rs.100</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/e/n/eng0069.jpg" alt="">
+                </div>
+                <div>
+                    <p>Energy Nudge<br> Deodrant, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/s/e/set0156.jpg" alt="">
+                </div>
+                <div>
+                    <p>Ponds Moisturising <br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                    <span>&#x20B9;12 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+        </div>
+         <!--Half Price Store-->
+
+         <!--MONSOON MUST HAVES start-->
+         <div class=sellerHead>
+            <h2>MONSOON MUST HAVES</h2>
+            <h2>View All</h2>
+         </div>
+         <hr style="width: 90%; margin:auto;">
+
+         <div class="hotsellers">
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/a/l/all0351.jpg" alt="">
+                </div>
+                <div>
+                    <p>All Out <br> Power refill 1kit</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del> (100)</del></h2>
+                    <h3>Rs.65</h3>
+                </div>
+                <div>
+                   <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/g/o/goo0173.jpg" alt="">
+                </div>
+                <div>
+                    <p>Good nigths <br>fragrance mosquito</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>100</del></h2>
+                    <h3>Rs.50</h3>
+                </div>
+                <div>
+                   <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/o/d/odo0026_1.jpg" alt="">
+                </div>
+                <div>
+                    <p>Odomas mosquito<br> Cold Creame, 200 mg</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP (310)</h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                   <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/h/i/hit0015_2.jpg" alt="">
+                </div>
+                <div>
+                    <p>Ponds Moisturising <br> Cold Creame, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/o/d/odo0041_2.jpg" alt="">
+                </div>
+                <div>
+                    <p>Odomas Natural<br> mosquito, 200 ml</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)</del></h2>
+                    <h3>Rs.190</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img  src="https://newassets.apollo247.com/pub/media/catalog/product/cache/resized/100x/g/o/goo0162.png" alt="">
+                </div>
+                <div>
+                    <p>Good nigths <br>Gold flash</p>
+                </div>
+                <hr>
+                <div>
+                    <h2>MRP <del>(310)150</del></h2>
+                    <h3>Rs.100</h3>
+                </div>
+                <div>
+                     <span>&#x20B9;19 extra cashback</span>
+                </div>
+                <div>
+                    <input type="button" value="ADD TO CART">
+                </div>
+            </div>
+        </div>
+         <!--MONSOON MUST HAVES end-->
+         <div id="healthArticle">
+             <div>
+                 <h1>HEALTH ARTICLES & RESOURCES</h1>
+                 <p>Make better health choices with our curated blogs, videos and expert advice.</p>
+             </div>
+             <div>
+                 <div>
+                     <h2 style="color: teal;">HEALTH BLOG</h2>
+                     <p style="color: gray; font-size:20px;">Explore healthcare content created every day by our experts.</p>
+                
+                 </div>
+                 <div style="background-color: white; cursor: pointer;;padding: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 10px;">
+                     <img style="width: 25px; height: 20px;;" src="https://cdn.iconscout.com/icon/free/png-256/chat-2639493-2187526.png" alt="">
+                     <span style="font-size: 20px;">Read the Latest Articles</span>
+                 </div>
+             </div>
+             <div>
+                 <h3>YOU CAN ALSO</h3>
+                 <div id="youCanAlso">
+                     <div>
+                        <img src="https://newassets.apollo247.com/images/ic_psychologist.svg" alt="">
+                         <span>Take a mental health scan</span>
+                     </div>
+                     <div>
+                        <img src="https://assets.apollo247.com/images/ic_healthy_life.png" alt="">
+                         
+                         <span>Explore HealthyLife</span>
+                     </div>
+                     <div>
+                         <img src="https://newassets.apollo247.com/images/apollo-kavach.png" alt="">
+                         <span>Explore the Apollo Kavach Program</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div id="bottomPart">
+             <div style="margin: auto; width:200px">
+                 <img style="width: 120px;" src="https://newassets.apollo247.com/images/ic_logo.png" alt="">
+             </div>
+             <h3>About Apollo 247</h3>
+             <ul class="bottomContent">
+                 <li>About Us</li>
+                 <li>Contact Us</li>
+                 <li>FAQs</li>
+                 <li>Health Queries</li>
+                 <li>Terms and Conditions</li>
+                 <li>Returns Policy</li>
+                 <li>Refund Policy</li>
+                 <li>Privacy Policy</li>
+                 <li>Apollo 247 Android App</li>
+                 <li>Apollo 247 iOS App</li>
+                 <li>Apollo 247 Sitemap</li>
+                 <li>Online Doctor App</li>
+                 <li>Online Medicine App</li>
+                 <li>Apollo Pharmacy</li>
+             </ul>
+
+             <h3>Services</h3>
+             <ul class="bottomContent">
+                 <li>Online Doctor Consultation</li>
+                 <li>Apollo Circle Membership</li>
+                 <li>Online Medicines</li>
+                 <li>Project Kavach</li>
+                 <li>Cough Scanner</li>
+                 <li>Covid Vaccine Tracker</li>
+                 <li>Covid Vaccine Update</li>
+                 <li>Apollo Pro Health Program</li>
+                 <li>Doctors by Specialty</li>
+                 <li>Doctors by City</li>
+                 <li>All Doctors List</li>
+                 
+             </ul>
+
+             <h3>Top Specialists</h3>
+             <ul class="bottomContent">
+                 <li>Covid Consultation</li>
+                 <li>Consult Physicians</li>
+                 <li>Consult Dermatologists</li>
+                 <li>Consult Paediatricians</li>
+                 <li>Consult Gynaecologists</li>
+                 <li>Consult Gastroenterologists</li>
+                 <li>Consult Cardiologists</li>
+                 <li>Consult Dietitians</li>
+                 <li>Consult ENT Specialists</li>
+                 <li>Consult Geriatricians</li>
+                 <li>Consult Diabetologists</li>
+               </ul>  
+               <h3>Book Lab Tests at Home</h3>
+               <ul class="bottomContent">
+                   <li>RT PCR Test At Home</li>
+                   <li>Book Lab Tests at Home</li>
+                   <li>Renal Profile (KFT, RFT Test)</li>
+                   <li>Hemogram Test</li>
+                   <li>Lipid Profile Test</li>
+                   <li>Thyroid Profile Test (T3 T4 Tsh Test)</li>
+                   <li>D Dimer Test</li>
+                   <li>Urine Culture Test</li>
+                   <li>Complete Blood Count (CBC Test)</li>
+                   <li>Widal Test</li>
+                   <li>Liver Function Test (LFT Test)</li>
+                 </ul>  
+                 <h3>Product Categories</h3>
+                 <ul class="bottomContent">
+                     <li>View All Brands</li>
+                     <li>Health Care</li>
+                     <li>Personal Care</li>
+                     <li>Baby Care</li>
+                     <li>Nutrition</li>
+                     <li>Healthcare Devices</li>
+                     <li>Beauty Skin Care</li>
+                     <li>Immunity Boosters</li>
+                     <li>Coronavirus Prevention</li>
+                     <li>Diabetes Care</li>
+                     <li>Patanjali Coronil Kit</li>
+                     <li>Mamaearth Products</li>
+                   </ul>  
+         </div>
+     </div>
+
+
+     <script src="index.js"></script>
+     <script>
+         
+         document.getElementById("doctors").addEventListener("click", function(){
+             window.location.href = "doctors.html";
+         })
+
+        let product = JSON.parse(localStorage.getItem("prd")) || [];
+
+         let cart = document.querySelectorAll("div.hotsellers > div input");
+         
+
+        
+        for(let i=0; i<cart.length; i++){
+            productCart(cart[i], i);
+        }
+            
+        function productCart(item, index){
+            item.addEventListener("click", function(){
+
+           let cartItems = {
+           img : document.querySelectorAll("div.hotsellers > div img")[index].src,
+           name : document.querySelectorAll("div.hotsellers > div p")[index].textContent,
+           price: document.querySelectorAll("div.hotsellers > div h3")[index].innerHTML,
+            }
+
+        //    console.log(cartItems);
+           product.push(cartItems);
+           localStorage.setItem("prd", JSON.stringify(product));
+           
+         })
+        
+        }
+
+         document.getElementById("goToCart").addEventListener("click", function(){
+             window.location.href = "cart.html";
+         })
+
+        
+     </script>
+    
+</body>
+</html>

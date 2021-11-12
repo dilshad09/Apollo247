@@ -1,0 +1,52 @@
+#medicine{
+    width: 90%;
+    margin:100px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+#medicine > div{
+   width: 48%;
+   
+}
+#products{
+  text-align: center;
+}
+#products > div{
+  width: 300px;
+  margin: 50px ;
+ 
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ }
+ #products > div img{
+   width: 100%;
+   border-radius:15px 15px 0 0;
+ }
+ #products > div h3,h2{
+   margin: 20px auto;
+ }
+ #delbtn{
+     width: 100%;
+     background-color: red;
+     border-radius:0% 0% 15px 15px;
+ }
+
+ #total{
+     font-size: 20px;
+     background-color: white;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     padding: 50px;
+     height: fit-content;
+ }
+ #money{
+     font-size: 40px;
+     color: rgb(16, 16, 102);
+     margin: 30px auto 50px;
+ }
+ #payBtn{
+     width: 300px;
+     background-color: red;
+     border-radius: 0%;
+     font-size: 30px;
+ }

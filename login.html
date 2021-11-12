@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 247 - Online Doctor Consultation & Book Lab Tests at apollo247.com</title>
+    <link rel="shortcut icon" type="img/png"  href="https://newassets.apollo247.com/images/ic_logo.png">
+
+    <style>
+        #login{
+            width: 420px;
+            height: 450px;
+            border: 1px solid black;
+            padding:0 20px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        button{
+            background-color: #FED984;
+            font-size: 50px;
+            border-radius: 50%;
+            padding: 20px;
+            ;
+            border: none;
+            color: white;
+        }
+        input{
+            width: 250px;
+            border: none;
+            border-bottom: 3px solid green;
+            margin-right: 20px;
+            font-size: 30px;
+        }
+        input:focus{
+            
+            border: none;
+        }
+        label{
+            font-size: 30px;
+        }
+        #cross{
+            position: absolute;
+            right: 0;
+        }
+        #cross img{
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="openNav() ">open</h1>
+   <div id="login">
+    <div onclick="closeNav()" id="cross">
+        <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+       </div>
+    <h1 style="font-size: 50px; color: rgb(6, 6, 49); padding: 50px 0;">Hi</h1>
+    <p style="font-size: 30px; color:blue;">Please enter your mobile number to login</p>
+    <label for="mobileNo">+91</label>
+    <input type="number" name="" id="mobileNo">
+    <button>&#8594;</button>
+    <p style="font-size: 20px;">OTP will be sent to this number by SMS and whatsapp. By signing up, I agree to the <span style="color: #FED984;">Privacy Policy, Terms and Conditions</span> of Apollo247</p>
+   </div>
+
+   <script>
+    function openNav() {
+        document.getElementById("login").style.visibility = "visible";
+      document.getElementById("login").style.width = "420px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    
+    function closeNav() {
+      document.getElementById("login").style.visibility = "hidden";
+    //   document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+    </script>
+</body>
+</html>

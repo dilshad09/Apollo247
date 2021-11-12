@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#paymentDiv{
+    width: 400px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+}
+#paymentDiv >div{
+    margin: 15px auto;
+}
+#paymentDiv >div input{
+    border: 1px solid green;
+}
+.inputdiv{
+    width: 100%;
+    margin: 15px;
+}
+div > input{
+    width: 100%;
+    font-size: 30px;
+    padding: 10px;
+}
+div > input[type="button"]{
+    width: 320px;
+    background-color: red;
+    border-radius: 10px;
+}
+#payhead{
+    font-size: 50px;
+    color: red;
+}

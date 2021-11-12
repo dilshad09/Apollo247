@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 247 - Online Doctor Consultation & Book Lab Tests at apollo247.com</title>
+    <link rel="shortcut icon" type="img/png"  href="https://newassets.apollo247.com/images/ic_logo.png">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="otp.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div id="needHelp">
+        <img src="https://newassets.apollo247.com/images/ic-mascot.png" alt="">
+    </div>
+
+    
+
+     <div id="container">
+         <div id="header">
+             <div id="apolloLogo"><img style="cursor: pointer;" src="https://newassets.apollo247.com/images/ic_logo.png"/></div>
+             <div id="doctors">
+                 <h3>DOCTORS</h3>
+                 <p>Consult <br> Online</p>
+            </div>
+             <div id="pharmacy">
+                 <h3>PHARMACY</h3>
+                 <p>Medicines &<br>other products</p>
+            </div>
+             <div>
+                 <h3>LAB TESTS</h3>
+                 <p>Health <br> check-ups</p>
+            </div>
+             <div>
+                 <h3>COVID-19</h3>
+                 <p>Latest <br> updates</p>
+            </div>
+             <div id="cart"><img style="cursor: pointer;" src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png"/></div>
+             <div onclick="loginPage()" id="login"><img style="cursor: pointer;" src="https://i.pinimg.com/originals/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg"/></div>
+         </div>
+        <div id="logindiv">
+            <div id="loginPage">
+                <div onclick="closeNav()" id="cross">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0;">Hi</h1>
+                <p style="font-size: 30px; color:blue;">Please enter your mobile number to login</p>
+                <label for="mobileNo">+91</label>
+                <input type="number" name="" id="mobileNo" placeholder="enter your mobile number" required>
+                <button onclick="goToOTP()">&#8594;</button>
+                <p style="font-size: 20px;">OTP will be sent to this number by SMS and whatsapp. By signing up, I agree to the <span style="color: #FED984;">Privacy Policy, Terms and Conditions</span> of Apollo247</p>
+               </div>
+        </div>
+
+        <div id="otpDiv">
+            <div id="otpPage">
+                <div onclick="cancelOtpPage()" id="crossOTP">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0 50px 0; padding-top: 50px;">Great</h1>
+                <p style="font-size: 30px; color:blue;">Now type the OTP sent to you for the authentication</p>
+                
+                <input type="number" name="" id="otp" placeholder="Enter your OTP" required>
+                <button onclick="putOTP()">&#8594;</button>
+                <p style="font-size: 20px;">resend OTP</p>
+               </div>
+        </div>
+
+        <div id="medicine">
+            <div id="products">
+                <!-- <div>
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <h2></h2>
+                    </div>
+                    <div>
+                        <h3></h3>
+                    </div>
+                </div> -->
+            </div>
+            <div id="total">
+                <!-- <div>
+                    <h2></h2>
+                    <h3></h3>
+                    <br>
+                    <h1></h1>
+                </div> -->
+            </div>
+        </div>
+        
+
+        
+
+         <div id="bottomPart">
+             <div style="margin: auto; width:200px">
+                 <img style="width: 120px;" src="https://newassets.apollo247.com/images/ic_logo.png" alt="">
+             </div>
+             <h3>About Apollo 247</h3>
+             <ul class="bottomContent">
+                 <li>About Us</li>
+                 <li>Contact Us</li>
+                 <li>FAQs</li>
+                 <li>Health Queries</li>
+                 <li>Terms and Conditions</li>
+                 <li>Returns Policy</li>
+                 <li>Refund Policy</li>
+                 <li>Privacy Policy</li>
+                 <li>Apollo 247 Android App</li>
+                 <li>Apollo 247 iOS App</li>
+                 <li>Apollo 247 Sitemap</li>
+                 <li>Online Doctor App</li>
+                 <li>Online Medicine App</li>
+                 <li>Apollo Pharmacy</li>
+             </ul>
+
+             <h3>Services</h3>
+             <ul class="bottomContent">
+                 <li>Online Doctor Consultation</li>
+                 <li>Apollo Circle Membership</li>
+                 <li>Online Medicines</li>
+                 <li>Project Kavach</li>
+                 <li>Cough Scanner</li>
+                 <li>Covid Vaccine Tracker</li>
+                 <li>Covid Vaccine Update</li>
+                 <li>Apollo Pro Health Program</li>
+                 <li>Doctors by Specialty</li>
+                 <li>Doctors by City</li>
+                 <li>All Doctors List</li>
+                 
+             </ul>
+
+             <h3>Top Specialists</h3>
+             <ul class="bottomContent">
+                 <li>Covid Consultation</li>
+                 <li>Consult Physicians</li>
+                 <li>Consult Dermatologists</li>
+                 <li>Consult Paediatricians</li>
+                 <li>Consult Gynaecologists</li>
+                 <li>Consult Gastroenterologists</li>
+                 <li>Consult Cardiologists</li>
+                 <li>Consult Dietitians</li>
+                 <li>Consult ENT Specialists</li>
+                 <li>Consult Geriatricians</li>
+                 <li>Consult Diabetologists</li>
+               </ul>  
+               <h3>Book Lab Tests at Home</h3>
+               <ul class="bottomContent">
+                   <li>RT PCR Test At Home</li>
+                   <li>Book Lab Tests at Home</li>
+                   <li>Renal Profile (KFT, RFT Test)</li>
+                   <li>Hemogram Test</li>
+                   <li>Lipid Profile Test</li>
+                   <li>Thyroid Profile Test (T3 T4 Tsh Test)</li>
+                   <li>D Dimer Test</li>
+                   <li>Urine Culture Test</li>
+                   <li>Complete Blood Count (CBC Test)</li>
+                   <li>Widal Test</li>
+                   <li>Liver Function Test (LFT Test)</li>
+                 </ul>  
+                 <h3>Product Categories</h3>
+                 <ul class="bottomContent">
+                     <li>View All Brands</li>
+                     <li>Health Care</li>
+                     <li>Personal Care</li>
+                     <li>Baby Care</li>
+                     <li>Nutrition</li>
+                     <li>Healthcare Devices</li>
+                     <li>Beauty Skin Care</li>
+                     <li>Immunity Boosters</li>
+                     <li>Coronavirus Prevention</li>
+                     <li>Diabetes Care</li>
+                     <li>Patanjali Coronil Kit</li>
+                     <li>Mamaearth Products</li>
+                   </ul>  
+         </div>
+     </div>
+
+<script src="cart.js"></script>
+    
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 247 - Online Doctor Consultation & Book Lab Tests at apollo247.com</title>
+    <link rel="shortcut icon" type="img/png"  href="https://newassets.apollo247.com/images/ic_logo.png">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="otp.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div id="needHelp">
+        <img src="https://newassets.apollo247.com/images/ic-mascot.png" alt="">
+    </div>
+
+    
+
+     <div id="container">
+         <div id="header">
+             <div id="apolloLogo">
+                 <img style="cursor: pointer;" src="https://newassets.apollo247.com/images/ic_logo.png"/>
+              </div>
+             <div id="doctors">
+                 <h3>DOCTORS</h3>
+                 <p>Consult <br> Online</p>
+            </div>
+             <div id="pharmacy">
+                 <h3>PHARMACY</h3>
+                 <p>Medicines &<br>other products</p>
+            </div>
+             <div>
+                 <h3>LAB TESTS</h3>
+                 <p>Health <br> check-ups</p>
+            </div>
+             <div>
+                 <h3>COVID-19</h3>
+                 <p>Latest <br> updates</p>
+            </div>
+             <div id="cart" onclick="goToCartPage()">
+                <img style="cursor: pointer;" src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png"/>
+            </div>
+             <div onclick="loginPage()" id="login">
+                <img style="cursor: pointer;" src="https://i.pinimg.com/originals/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg"/>
+            </div>
+         </div>
+        <div id="logindiv">
+            <div id="loginPage">
+                <div onclick="closeNav()" id="cross">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0;">Hi</h1>
+                <p style="font-size: 30px; color:blue;">Please enter your mobile number to login</p>
+                <label for="mobileNo">+91</label>
+                <input type="number" name="" id="mobileNo" placeholder="enter your mobile number" required>
+                <button onclick="goToOTP()">&#8594;</button>
+                <p style="font-size: 20px;">OTP will be sent to this number by SMS and whatsapp. By signing up, I agree to the <span style="color: #FED984;">Privacy Policy, Terms and Conditions</span> of Apollo247</p>
+               </div>
+        </div>
+
+        <div id="otpDiv">
+            <div id="otpPage">
+                <div onclick="cancelOtpPage()" id="crossOTP">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0 50px 0; padding-top: 50px;">Great</h1>
+                <p style="font-size: 30px; color:blue;">Now type the OTP sent to you for the authentication</p>
+                
+                <input type="number" name="" id="otp" placeholder="Enter your OTP" required>
+                <button onclick="putOTP()">&#8594;</button>
+                <p style="font-size: 20px;">resend OTP</p>
+               </div>
+        </div>
+
+         <div id="helloThere">
+             <div>
+                 <h1 style="font-size: 90px; color: rgb(27, 82, 104);">Hello There!</h1>
+                 <p style="color: rgb(67,120,141);">Always caring about your health, we are here to help you!</p>
+                 <div class="bookApoint">
+                     <div><img style="width: 70px; height: 50px;" src="https://newassets.apollo247.com/images/ic-doctor.svg"/></div>
+                     <div><h3 style="font-size: 22px;">Book Appointment with Apollo Doctors</h3></div>
+                     <div>&#x0203A;</div>
+                 </div>
+                 <div class="bookApoint">
+                    <div><img style="width: 70px; height: 50px;" src="https://newassets.apollo247.com/images/ic_medicines.png"/></div>
+                    <div><h3 style="font-size: 22px;">Buy Medicines and Essentials</h3></div>
+                    <div>&#x0203A;</div>
+                </div>
+                 <div class="bookLab">
+                    <div class="bookLabChild">
+                        <div><img style="width: 70px; height: 60px;" src="https://newassets.apollo247.com/images/ic_home_test.svg" ></div>
+                        <div><p>Book Lab Tests</p></div>
+                    </div>
+                    <div class="bookLabChild">
+                        <div><img style="width: 70px ; height: 60px;" src="https://newassets.apollo247.com/images/ic-prescription.svg" ></div>
+                        <div><p>View Health Records</p></div>
+                    </div>
+                 </div>
+             </div>
+             <div><img style="width: 100%; height: 100%;" src="https://newassets.apollo247.com/images/img-doctors@1x.jpg"/></div>
+         </div>
+
+
+         <div class="slider">
+            <div class="slides">
+                <!--radio button start-->
+                <input type="radio" name="radio_btn" id="radio1">
+                <input type="radio" name="radio_btn" id="radio2">
+                <input type="radio" name="radio_btn" id="radio3">
+                <input type="radio" name="radio_btn" id="radio4">
+                <!--radio button end-->
+                <!--image slides start-->
+                <div class="slide first">
+                    <img src="https://newassets.apollo247.com/images/banners/mweb_First3.jpg" alt="" >
+                </div>
+                <div class="slide">
+                    <img src="https://newassets.apollo247.com/images/banners/mweb_HHCancer_05_11_2021.jpg" alt="">
+                </div>
+                <div class="slide">
+                   <img src="https://newassets.apollo247.com/images/banners/mweb_Labtests_15Oct21.jpg" alt="">
+               </div>
+               <div class="slide">
+                   <img src="https://newassets.apollo247.com/images/banners/mweb_ApolloHomeCare.jpg" alt="">
+               </div>
+                <!--image slides end-->
+                <!--automatic navigation start-->
+                  <div class="navigation-auto">
+                      <div class="navigation-btn1"></div>
+                      <div class="navigation-btn2"></div>
+                      <div class="navigation-btn3"></div>
+                      <div class="navigation-btn4"></div>
+                  </div>
+                <!--automatic navigation end-->
+                <!--manual navigation start-->
+                
+            </div>
+    
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!--manual navigation end-->
+           
+        </div>
+         <div id="vaccineQuery-container">
+             <h2>For COVID-19 Vaccination related queries</h2>
+            <div id="vaccineQuery">
+            
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://www.nicepng.com/png/detail/119-1191948_yammer-faqs-icon.png" alt="">
+                    <span>FAQS & Articles</span>
+                </div>
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn_6CLESQ3er7i_MWRgdMiWBqvn7JjJIGobHQaUioEmy1O8M0PCe4gnJEDFtyEdFz1eqk&usqp=CAU" alt="">
+                    <span>Vaccination Queries</span>
+                </div>
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://cdn.iconscout.com/icon/free/png-256/chat-2639493-2187526.png" alt="">
+                    <span>Chat with us</span>
+                </div>
+                <div>
+                    <img style="width: 30px; height: 30px;" src="https://newassets.apollo247.com/images/vaccine.png" alt="">
+                    <span>Cowin Registration</span>
+                </div>
+            </div>
+         </div>
+         <div style="width: 90%; height: 300px; margin: 50px auto; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 15px;">
+             <img style="width: 100%; height: 100%;" src="https://newassets.apollo247.com/images/prohealth/prohealthSliderThree.jpg" alt="">
+         </div>
+
+         <div id="healthArticle">
+             <div>
+                 <h1>HEALTH ARTICLES & RESOURCES</h1>
+                 <p>Make better health choices with our curated blogs, videos and expert advice.</p>
+             </div>
+             <div>
+                 <div>
+                     <h2 style="color: teal;">HEALTH BLOG</h2>
+                     <p style="color: gray; font-size:20px;">Explore healthcare content created every day by our experts.</p>
+                
+                 </div>
+                 <div style="background-color: white; cursor: pointer;;padding: 15px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 10px;">
+                     <img style="width: 25px; height: 20px;;" src="https://cdn.iconscout.com/icon/free/png-256/chat-2639493-2187526.png" alt="">
+                     <span style="font-size: 20px;">Read the Latest Articles</span>
+                 </div>
+             </div>
+             <div>
+                 <h3>YOU CAN ALSO</h3>
+                 <div id="youCanAlso">
+                     <div>
+                        <img src="https://newassets.apollo247.com/images/ic_psychologist.svg" alt="">
+                         <span>Take a mental health scan</span>
+                     </div>
+                     <div>
+                        <img src="https://assets.apollo247.com/images/ic_healthy_life.png" alt="">
+                         
+                         <span>Explore HealthyLife</span>
+                     </div>
+                     <div>
+                         <img src="https://newassets.apollo247.com/images/apollo-kavach.png" alt="">
+                         <span>Explore the Apollo Kavach Program</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div id="bottomPart">
+             <div style="margin: auto; width:200px">
+                 <img style="width: 120px;" src="https://newassets.apollo247.com/images/ic_logo.png" alt="">
+             </div>
+             <h3>About Apollo 247</h3>
+             <ul class="bottomContent">
+                 <li>About Us</li>
+                 <li>Contact Us</li>
+                 <li>FAQs</li>
+                 <li>Health Queries</li>
+                 <li>Terms and Conditions</li>
+                 <li>Returns Policy</li>
+                 <li>Refund Policy</li>
+                 <li>Privacy Policy</li>
+                 <li>Apollo 247 Android App</li>
+                 <li>Apollo 247 iOS App</li>
+                 <li>Apollo 247 Sitemap</li>
+                 <li>Online Doctor App</li>
+                 <li>Online Medicine App</li>
+                 <li>Apollo Pharmacy</li>
+             </ul>
+
+             <h3>Services</h3>
+             <ul class="bottomContent">
+                 <li>Online Doctor Consultation</li>
+                 <li>Apollo Circle Membership</li>
+                 <li>Online Medicines</li>
+                 <li>Project Kavach</li>
+                 <li>Cough Scanner</li>
+                 <li>Covid Vaccine Tracker</li>
+                 <li>Covid Vaccine Update</li>
+                 <li>Apollo Pro Health Program</li>
+                 <li>Doctors by Specialty</li>
+                 <li>Doctors by City</li>
+                 <li>All Doctors List</li>
+                 
+             </ul>
+
+             <h3>Top Specialists</h3>
+             <ul class="bottomContent">
+                 <li>Covid Consultation</li>
+                 <li>Consult Physicians</li>
+                 <li>Consult Dermatologists</li>
+                 <li>Consult Paediatricians</li>
+                 <li>Consult Gynaecologists</li>
+                 <li>Consult Gastroenterologists</li>
+                 <li>Consult Cardiologists</li>
+                 <li>Consult Dietitians</li>
+                 <li>Consult ENT Specialists</li>
+                 <li>Consult Geriatricians</li>
+                 <li>Consult Diabetologists</li>
+               </ul>  
+               <h3>Book Lab Tests at Home</h3>
+               <ul class="bottomContent">
+                   <li>RT PCR Test At Home</li>
+                   <li>Book Lab Tests at Home</li>
+                   <li>Renal Profile (KFT, RFT Test)</li>
+                   <li>Hemogram Test</li>
+                   <li>Lipid Profile Test</li>
+                   <li>Thyroid Profile Test (T3 T4 Tsh Test)</li>
+                   <li>D Dimer Test</li>
+                   <li>Urine Culture Test</li>
+                   <li>Complete Blood Count (CBC Test)</li>
+                   <li>Widal Test</li>
+                   <li>Liver Function Test (LFT Test)</li>
+                 </ul>  
+                 <h3>Product Categories</h3>
+                 <ul class="bottomContent">
+                     <li>View All Brands</li>
+                     <li>Health Care</li>
+                     <li>Personal Care</li>
+                     <li>Baby Care</li>
+                     <li>Nutrition</li>
+                     <li>Healthcare Devices</li>
+                     <li>Beauty Skin Care</li>
+                     <li>Immunity Boosters</li>
+                     <li>Coronavirus Prevention</li>
+                     <li>Diabetes Care</li>
+                     <li>Patanjali Coronil Kit</li>
+                     <li>Mamaearth Products</li>
+                   </ul>  
+         </div>
+     </div>
+
+
+     <script src="index.js"></script>
+     
+    
+</body>
+</html>

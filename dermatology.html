@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo 247 - Online Doctor Consultation & Book Lab Tests at apollo247.com</title>
+    <link rel="shortcut icon" type="img/png"  href="https://newassets.apollo247.com/images/ic_logo.png">
+   
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="otp.css">
+    <link rel="stylesheet" href="dermatology.css">
+    <link rel="stylesheet" href="consultNow.css">
+    
+</head>
+<body>
+    <div id="needHelp">
+        <img src="https://newassets.apollo247.com/images/ic-mascot.png" alt="">
+    </div>
+
+     <div id="container">
+         <div id="header">
+             <div id="apolloLogo"><img style="cursor: pointer;" src="https://newassets.apollo247.com/images/ic_logo.png"/></div>
+             <div id="doctorHover">
+                 <h3>DOCTORS</h3>
+                 <p>Consult <br> Online</p>
+            </div>
+             <div>
+                 <h3>PHARMACY</h3>
+                 <p>Medicines &<br>other products</p>
+            </div>
+             <div>
+                 <h3>LAB TESTS</h3>
+                 <p>Health <br> check-ups</p>
+            </div>
+             <div>
+                 <h3>COVID-19</h3>
+                 <p>Latest <br> updates</p>
+            </div>
+             <div id="cart" onclick="goToCartPage()"><img style="cursor: pointer;" src="https://i.pinimg.com/originals/15/4f/df/154fdf2f2759676a96e9aed653082276.png"/></div>
+             <div onclick="loginPage()" id="login"><img style="cursor: pointer;" src="https://i.pinimg.com/originals/97/21/05/972105c5a775f38cf33d3924aea053f1.jpg"/></div>
+         </div>
+        <div id="logindiv">
+            <div id="loginPage">
+                <div onclick="closeNav()" id="cross">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0;">Hi</h1>
+                <p style="font-size: 30px; color:blue;">Please enter your mobile number to login</p>
+                <label for="mobileNo">+91</label>
+                <input type="number" name="" id="mobileNo" placeholder="enter your mobile number" required>
+                <button onclick="goToOTP()">&#8594;</button>
+                <p style="font-size: 20px;">OTP will be sent to this number by SMS and whatsapp. By signing up, I agree to the <span style="color: #FED984;">Privacy Policy, Terms and Conditions</span> of Apollo247</p>
+               </div>
+        </div>
+
+        <div id="otpDiv">
+            <div id="otpPage">
+                <div onclick="cancelOtpPage()" id="crossOTP">
+                    <img src="https://newassets.apollo247.com/images/ic_cross_popup.svg" alt="">
+                   </div>
+                <h1 style="font-size: 50px; color: rgb(6, 6, 49); margin: 50px 0 50px 0; padding-top: 50px;">Great</h1>
+                <p style="font-size: 30px; color:blue;">Now type the OTP sent to you for the authentication</p>
+                
+                <input type="number" name="" id="otp" placeholder="Enter your OTP" required>
+                <button onclick="putOTP()">&#8594;</button>
+                <p style="font-size: 20px;">resend OTP</p>
+               </div>
+        </div>
+
+        <div style="width: 96%; margin:auto; color:chocolate;">
+            <h3>Home <span style="color: rgb(9, 95, 95);">&#x025B8; Specialities</span></h3>
+        </div>
+        <hr style="width: 96%; margin:50px auto; border:1px solid green;">
+
+        <div id="doctorContainer">
+            <div id="doctors">
+               <h1 class="h1" id="changeContent">Consult Dermatologists Online - Hair & Skin Doctors</h1>
+               <span>
+                <img style="width: 30px;" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/magnifying-glass-tilted-left_1f50d.png" alt=""> 
+               </span>
+               
+               <input type="text" placeholder="Search Doctors or Specialities" id="searchDr">
+              
+            
+               <div id="dermaDr">
+                 <div class="dermaHead">
+                     <img src="https://newassets.apollo247.com/images/ic_doctor_consult.svg" alt="">
+                     <span>Doctor of the Hour!</span>
+                 </div>
+                 <!--page for consultation start-->
+                 <div id="consultNowPage">
+                    <h1 style="color: teal; margin: 20px auto;">Dr. Madhuri Rastogi</h1>
+                    <h2>MBBS, MD</h2>
+                    <p style="margin: 10px auto; color:blueviolet; font-size:20px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam numquam maxime, error, tempora quisquam animi repellendus suscipit dolores magnam provident officia hic facere quaerat illum necessitatibus! Incidunt culpa facere nobis!</p>
+                    <h2 style="color: rgb(11, 11, 119); margin: 10px auto;">Price :1000 </h2>
+                    <button id="paybtn">Pay Online</button>
+                    <button id="cancelbtn">Cancel</button>
+                </div>
+                 <!--page for consultation end-->
+
+                 <div id="BookApp">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/bc67b00c-eedd-4f1b-814a-8c1b34dd0985.jpg"/>
+                    </div>
+                    <div>
+                        <h1>Dr. Pranoti Deshpandey</h1>
+                        <h3>DERMATOLOGIST | 22 Year Exp.</h3>
+                        <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                        <p>Apollo Hospital D R D KanchanBagh</p>
+                    </div>
+                     <div>
+                        <div id="DrFees">
+                            <div>you pay <br>&#x20B9; 1000</div>
+                            <div>CIRCLE MEMBERS <br>&#x20B9; 900</div>
+                        </div>
+                        <input type="button" value="BOOK APPOINTMENT" id="bookBtn">
+                     </div>
+                 </div>
+               </div>
+               
+               <div id="otherDr">
+                   <div class="DrDetails">
+                       <div>
+                           <img src="https://newassets.apollo247.com/doctors/596cc2a3-3ecb-4476-9820-6d21a59fa6d9.jpg" alt="">
+                       </div>
+                       <div>
+                        <div>
+                            <h2>Dr. Nitin Jain</h2>
+                            <h3>DERMATOLOGIST | 25 Year Exp.</h3>
+                            <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                            <p>Apollo Hospital D R D KanchanBagh</p>
+                        </div>
+                         <div>
+                            <div class="DrFees">
+                                <div>you pay <br>&#x20B9; 650</div>
+                                <div>CIRCLE MEMBERS <br>&#x20B9; 550</div>
+                            </div>
+                            <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                         </div>
+                       </div>
+                   </div>
+                   <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/18d9f399-1ea7-4b66-869a-a09bd06348b3.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Pranoti Deshpandey</h2>
+                         <h3>DERMATOLOGIST | 22 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 350</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 250</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/29c8f639-1c0f-43a9-b0b0-b262a01c0863.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Deepti Walvekar</h2>
+                         <h3>DERMATOLOGIST | 22 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology )</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 500</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 450</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/a0b27810-db3d-4d4c-bd6d-cb6bffdec3ca.-Tanushree-Biswas_420x420" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Tanushree-Biswas</h2>
+                         <h3>DERMATOLOGIST | 5 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 600</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 0</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/2cddcb5f-a9f9-4e67-908e-92e87d6334ca.jpeg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Abhijana Rai</h2>
+                         <h3>DERMATOLOGIST | 7 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 550</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 450</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/2280f855-72ae-4557-adf0-578f7f608576.-Ashwak-Ahmed-N_1232x720" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Ashwak Ahmad N</h2>
+                         <h3>DERMATOLOGIST | 11 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 0</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 250</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/18d9f399-1ea7-4b66-869a-a09bd06348b3.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Pranoti Deshpandey</h2>
+                         <h3>DERMATOLOGIST | 22 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 750</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 650</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/66df440b-5793-4d71-ac7e-f5a3247c76a3.-Jaidev-Yadav_420x420" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Jaydev Yadav</h2>
+                         <h3>DERMATOLOGIST | 9 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 499</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 399</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/92cdba49-54c5-4f66-ba35-89863cd7ab9e.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. N Dheeraj Rao</h2>
+                         <h3>DERMATOLOGIST | 22 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 600</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 550</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/e5d6b6e8-975f-4c93-9f62-2692d8962d12.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Saifali Yadav</h2>
+                         <h3>DERMATOLOGIST | 10 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 1000</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 800</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/noimagemale.png" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Surendra V H H</h2>
+                         <h3>DERMATOLOGIST | 4 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 350</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 250</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/aish.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Aishwarya Malladi</h2>
+                         <h3>DERMATOLOGIST | 5 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 400</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 250</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/d4af9b63-6dc2-4dce-ae32-1f862528606f.jpg" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Kaushik Lahiri</h2>
+                         <h3>DERMATOLOGIST | 25 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 1100</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 1000</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/040190d4-1339-48fb-a430-060e16a64ca4.-Deepa-K_420x420" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Deepa K</h2>
+                         <h3>DERMATOLOGIST | 10 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 600</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 500</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://prodaphstorage.blob.core.windows.net/doctors/feca352b-0fea-4950-89e9-86522c20ac8f.-Praveen-Rodrigues_01" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. Parveen Rodrigue</h2>
+                         <h3>DERMATOLOGIST | 24 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 600</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 450</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+                <div class="DrDetails">
+                    <div>
+                        <img src="https://newassets.apollo247.com/doctors/611a7a06-813a-4b9a-8631-0fa0278a3c59.%20D%20M%20Mahajan_a" alt="">
+                    </div>
+                    <div>
+                     <div>
+                         <h2>Dr. D M Mahajan</h2>
+                         <h3>DERMATOLOGIST | 35 Year Exp.</h3>
+                         <p>MBBS, MD(Dermatology, Venereology and Leprosy)</p>
+                         <p>Apollo Hospital D R D KanchanBagh</p>
+                     </div>
+                      <div>
+                         <div class="DrFees">
+                             <div>you pay <br>&#x20B9; 1500</div>
+                             <div>CIRCLE MEMBERS <br>&#x20B9; 1400</div>
+                         </div>
+                         <input type="button" value="BOOK APPOINTMENT" class="otherDrbtn">
+                      </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+
+            <div id="whyApollo">
+                <h1 class="h1">Why Apollo247</h1>
+                <ul>
+                    <li>Round-the-clock doctor availability</li>
+                    <li>Broad range of Specialities</li>
+                    <li>Detailed digital prescriptions</li>
+                    <li>Order medicines & tests online</li>
+                    <li>Digitised health records</li>
+                </ul>
+                <h1 class="h1">How Doctor Consultation Works</h1>
+
+                <div id="howDoctorWork">
+                    <div><h2>Text/Audio/Video</h2></div>
+                    <div><h2>Meet in Person</h2></div>
+                </div>
+                <div id="chooseDr">
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/consult-doc.svg" alt="">
+                    <span>Choose the doctor</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/slot.svg" alt="">
+                    <span>Book a slot</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/ic-payment.svg" alt="">
+                    <span>Make payment</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/ic-mobile.svg" alt="">
+                    <span>Mobile Icon
+                        Be present in the consult room on apollo247.com at the time of consult</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/prescription.svg" alt="">
+                    <span>Receive prescriptions instantly</span>
+                   </div>
+                   <div>
+                    <img src="https://newassets.apollo247.com/images/ic-followchat.svg" alt="">
+                    <span>Follow Up via text - Valid upto 7 days</span>
+                   </div>
+                </div>
+
+                <div style="margin: 30px auto;">
+                    <p>To enjoy services provided by Apollo 247 on Mobile, download our App</p>
+
+                </div>
+                <div>
+                    <img style="width:150px" src="https://newassets.apollo247.com/images/apollo247.png" alt="">
+                    <span style="color: coral;">DOWNLOAD THE APP</span>
+                </div>
+            </div>
+        </div>
+
+         <div id="bottomPart">
+             <div style="margin: auto; width:200px">
+                 <img style="width: 120px;" src="https://newassets.apollo247.com/images/ic_logo.png" alt="">
+             </div>
+             <h3>About Apollo 247</h3>
+             <ul class="bottomContent">
+                 <li>About Us</li>
+                 <li>Contact Us</li>
+                 <li>FAQs</li>
+                 <li>Health Queries</li>
+                 <li>Terms and Conditions</li>
+                 <li>Returns Policy</li>
+                 <li>Refund Policy</li>
+                 <li>Privacy Policy</li>
+                 <li>Apollo 247 Android App</li>
+                 <li>Apollo 247 iOS App</li>
+                 <li>Apollo 247 Sitemap</li>
+                 <li>Online Doctor App</li>
+                 <li>Online Medicine App</li>
+                 <li>Apollo Pharmacy</li>
+             </ul>
+
+             <h3>Services</h3>
+             <ul class="bottomContent">
+                 <li>Online Doctor Consultation</li>
+                 <li>Apollo Circle Membership</li>
+                 <li>Online Medicines</li>
+                 <li>Project Kavach</li>
+                 <li>Cough Scanner</li>
+                 <li>Covid Vaccine Tracker</li>
+                 <li>Covid Vaccine Update</li>
+                 <li>Apollo Pro Health Program</li>
+                 <li>Doctors by Specialty</li>
+                 <li>Doctors by City</li>
+                 <li>All Doctors List</li>
+                 
+             </ul>
+
+             <h3>Top Specialists</h3>
+             <ul class="bottomContent">
+                 <li>Covid Consultation</li>
+                 <li>Consult Physicians</li>
+                 <li>Consult Dermatologists</li>
+                 <li>Consult Paediatricians</li>
+                 <li>Consult Gynaecologists</li>
+                 <li>Consult Gastroenterologists</li>
+                 <li>Consult Cardiologists</li>
+                 <li>Consult Dietitians</li>
+                 <li>Consult ENT Specialists</li>
+                 <li>Consult Geriatricians</li>
+                 <li>Consult Diabetologists</li>
+               </ul>  
+               <h3>Book Lab Tests at Home</h3>
+               <ul class="bottomContent">
+                   <li>RT PCR Test At Home</li>
+                   <li>Book Lab Tests at Home</li>
+                   <li>Renal Profile (KFT, RFT Test)</li>
+                   <li>Hemogram Test</li>
+                   <li>Lipid Profile Test</li>
+                   <li>Thyroid Profile Test (T3 T4 Tsh Test)</li>
+                   <li>D Dimer Test</li>
+                   <li>Urine Culture Test</li>
+                   <li>Complete Blood Count (CBC Test)</li>
+                   <li>Widal Test</li>
+                   <li>Liver Function Test (LFT Test)</li>
+                 </ul>  
+                 <h3>Product Categories</h3>
+                 <ul class="bottomContent">
+                     <li>View All Brands</li>
+                     <li>Health Care</li>
+                     <li>Personal Care</li>
+                     <li>Baby Care</li>
+                     <li>Nutrition</li>
+                     <li>Healthcare Devices</li>
+                     <li>Beauty Skin Care</li>
+                     <li>Immunity Boosters</li>
+                     <li>Coronavirus Prevention</li>
+                     <li>Diabetes Care</li>
+                     <li>Patanjali Coronil Kit</li>
+                     <li>Mamaearth Products</li>
+                   </ul>  
+         </div>
+     </div>
+
+
+     <script src="index.js"></script>
+     <script src="dermatology.js"></script>
+    
+</body>
+</html>

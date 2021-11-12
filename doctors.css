@@ -1,0 +1,104 @@
+
+       #doctorContainer{
+        background-color: white;
+        width: 95%;
+        margin: auto 50px;
+        display: grid;
+        grid-template-columns: 65% 33%;
+        gap: 15px;
+        justify-content: space-between;
+
+    }
+    #doctorContainer > div{
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+    #doctorHover{
+        background-color: whitesmoke;
+        border-bottom:5px solid rgb(4, 99, 99) ;
+        padding: 10px;
+        cursor: pointer;
+    }
+    #whyApollo{
+        background-color: white;
+        padding: 10px 40px;
+
+
+    }
+    #whyApollo ul{
+       font-size: 30px;
+    }
+    #howDoctorWork{
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        margin:  50px auto;
+        justify-content: space-between;
+        
+        
+    }
+    #howDoctorWork > div{
+     
+     background-color: white;
+     padding: 5px;
+     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     border-radius: 10px;
+     color: rgb(12, 70, 104);
+    }
+    .h1{
+        margin: 50px auto;
+        color: rgb(14, 103, 119);
+    }
+    #chooseDr > div{
+        margin: 5px auto;
+    }
+    #chooseDr img{
+        width: 30px;
+    }
+
+    #doctors{
+        padding: 20px;
+    }
+    #searchDr{
+        width: 94%;
+        
+        float: right;
+    }
+    #topSpl{
+        margin: 50px auto ;
+        display: grid;
+        grid-template-columns: repeat(4, 23%);
+        gap: 20px;
+    }
+    #topSpl > div{
+        background-color: white;
+        padding: 20px;
+       border-radius: 15px;
+       display: grid;
+       justify-content: center;
+       align-items: space-between;
+       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       cursor: pointer;
+    }
+    #topSpl img{
+        width: 80px;
+        height: 100px;
+        
+    }
+     #otherSpl{
+         display: grid;
+         grid-template-columns: 48% 48%;
+         gap: 30px;
+         justify-content: space-between;
+     }
+     #otherSpl > div{
+         background-color: white;
+         display: flex;
+         justify-content: space-between;
+         padding: 10px;
+         border-radius: 10px;
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+         cursor: pointer;
+     }
+     #otherSpl img{
+         width: 60px;
+     }
